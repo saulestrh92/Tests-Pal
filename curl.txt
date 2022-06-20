@@ -1,0 +1,39 @@
+cURLs
+
+Note: Port and Host don’t matter
+
+POST /uber/login
+
+curl --location --request POST 'http://127.0.0.1:8000/uber/login' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+   "email": "pierre@palenca.com",
+   "password": "MyPwdChingon123"
+}'
+ 
+{
+   "message": "SUCCESS",
+   "access_token": "cTV0aWFuQ2NqaURGRE82UmZXNVBpdTRxakx3V1F5"
+}
+ 
+GET /uber/profile/<access_token>
+
+curl --location --request GET 'http://127.0.0.1:8000/uber/profile/cTV0aWFuQ2NqaURGRE82UmZXNVBpdTRxakx3V1F5’ \
+--header 'Content-Type: application/json'
+
+{
+   "message": "SUCCESS",
+   "platform": "uber",
+   "profile": {
+       "country": "mx",
+       "city_name": "Ciudad de Mexico",
+       "worker_id": "34dc0c89b16fd170eba320ab186d08ed",
+       "first_name": "Pierre",
+       "last_name": "Delarroqua",
+       "email": "pierre@palenca.com",
+       "phone_prefix": "+52",
+       "phone_number": "5576955981",
+       "rating": "4.8",
+       "lifetime_trips": 1254
+   }
+}
