@@ -1,7 +1,6 @@
-from fastapi import APIRouter, Header
+from fastapi import APIRouter
 from fastapi.responses import JSONResponse
 from schema.user_schema import DataUser
-from typing import List, Union
 
 user = APIRouter()
 
